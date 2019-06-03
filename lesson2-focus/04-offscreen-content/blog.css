@@ -169,6 +169,11 @@ h6, .h6 {
 }
 
 .modal {
-  display: block;
+  display: none; /*also the culprit derp */
   left: 9999px;
+}
+
+/* Code I wrote */
+.close {
+  display: none;
 }

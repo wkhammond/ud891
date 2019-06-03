@@ -31,7 +31,8 @@
 
         e.preventDefault();
 
-        // This seems like a good place to do some stuff :)
+        // This seems like a good place to do some stuff ;)
+        this.focusedIdx = (this.focusedIdx + this.buttons.length - 1) % this.buttons.length;
 
         break;
 
@@ -43,6 +44,7 @@
         e.preventDefault();
 
         // This seems like a good place to do some stuff :)
+        this.focusedIdx = (this.focusedIdx + 1) % this.buttons.length;
 
         break;
       }

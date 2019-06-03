@@ -19,6 +19,13 @@
 
     this.el.addEventListener('keydown', this.handleKeyDown.bind(this));
     this.el.addEventListener('click', this.toggle.bind(this));
+
+    //Set up role and stuff
+    this.el.setAttribute('role', 'checkbox');
+    if(this.el.hasAttribute('checked'))
+      this.el.setAttribute('aria-checked', 'true');
+    else
+      this.el.setAttribute('aria-checked', 'false');
   }
 
   Checkbox.prototype.handleKeyDown = function(e) {
@@ -32,10 +39,14 @@
   };
 
   Checkbox.prototype.toggle = function() {
-    if (this.el.hasAttribute('checked'))
+    if (this.el.hasAttribute('checked')){
       this.el.removeAttribute('checked');
-    else
+      this.el.setAttribute('aria-checked', 'false');
+    }
+    else{
       this.el.setAttribute('checked', '');
+      this.el.setAttribute('aria-checked', 'true');
+    }
   };
 
   var checkboxes = slice(document.querySelectorAll('.checkbox'));
